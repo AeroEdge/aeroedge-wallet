@@ -1,0 +1,41 @@
+// ==========================================================================
+// BOX
+// ==========================================================================
+.c-box {
+  &--category {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: $mp-size-20px ($mp-size-35px * -1) 0;
+
+    li {
+      margin: $mp-size-20px $mp-size-35px 0;
+    }
+
+    &__item {
+      display: inline-block;
+      width: rem(168px);
+      color: inherit;
+      font-size: $font-size-18px;
+      text-decoration: none;
+      text-align: center;
+      background: $color-01;
+      border-radius: $border-radius-m;
+      box-shadow: $box-shadow-01;
+
+      &:after {
+        display: inline-block;
+        width: 0;
+        height: rem(74px);
+        content: '';
+        vertical-align: middle;
+      }
+
+      span {
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+  }
+}

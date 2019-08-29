@@ -1,0 +1,41 @@
+// ==========================================================================
+// Media Screen (Responsive)
+// ==========================================================================
+@mixin max-screen($break-point) {
+    @media screen and (max-width: $break-point) {
+        @content;
+    }
+}
+@mixin min-screen($break-point) {
+    @media screen and (min-width: $break-point) {
+        @content;
+    }
+}
+@mixin screen($break-point-min, $break-point-max) {
+    @media screen and (min-width: $break-point-min) and (max-width: $break-point-max) {
+        @content;
+    }
+}
+
+// ==========================================================================
+// Form mixin
+// ==========================================================================
+@mixin inputDesign() {
+    border: 1px solid $color-13;
+    border-radius: $border-radius-m;
+    outline: none;
+    background: $color-01;
+    color: inherit;
+
+    &:placeholder-shown {
+        color: $color-21;
+    }
+
+    &:disabled {
+        background: $color-11;
+    }
+
+    &[disabled="disabled"] {
+        background: $color-11;
+    }
+}

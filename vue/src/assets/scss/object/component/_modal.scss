@@ -1,0 +1,82 @@
+// ==========================================================================
+// Modal
+// ==========================================================================
+.c-modal {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: 0.5s all ease;
+    text-align: center;
+    z-index: 100;
+
+    &.c-modal {
+        .c-modal__modal {
+            text-align: center;
+        }
+    }
+
+    .c-modal__ovarlay {
+        background: rgba($color-02, 0.15);
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        transition: 0.5s all ease;
+    }
+
+    .c-modal__modal {
+        display: inline-block;
+        // width: calc(100vw - 64px);
+        max-width: rem(560px);
+        min-width: rem(340px);
+        margin: rem(240px) auto;
+        position: relative;
+        z-index: 11;
+        text-align: left;
+
+        &.detail {
+            @include min-screen($break-point-pc-tablet-max) {
+                width: rem(380px);
+                margin: rem(260px) rem(961px);
+            }
+        }
+
+        @include min-screen($break-point-pc-tablet-max) {
+            width: rem(440px);
+            margin: rem(260px) rem(930.8px);
+        }
+
+        .c-modal__body {
+            padding: rem(40px) rem(50px);
+            background: $color-01;
+            font-size: $font-size-18px;
+            word-wrap: break-word;
+            border-radius: $border-radius-m;
+            box-shadow: $box-shadow-01;
+
+            &__detail {
+                padding: rem(30px) rem(20px);
+            }
+
+            .c-modal__header {
+            }
+
+            .c-modal__content {
+                margin-top: rem(25px);
+                margin-bottom: rem(37px);
+
+                &__detail {
+                    margin-bottom: 0;
+                }
+            }
+
+            .c-modal__footer {
+            }
+        }
+    }
+}

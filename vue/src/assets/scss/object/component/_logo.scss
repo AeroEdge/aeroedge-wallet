@@ -1,0 +1,36 @@
+// ==========================================================================
+// Logo Main
+// ==========================================================================
+$assetsPath: './assets/images/';
+
+.c-logo-main{
+    width: 100%;
+    font-size: 0;
+
+    span {
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+    
+      img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+      }
+    }
+
+    .c-logo-main-mark {
+      width: rem(52px);
+      padding-top: rem(44px);
+    }
+
+    .c-logo-main-text {
+      width: rem(92px);
+      padding-top: rem(38px);
+    }
+
+    .c-logo-main-mark + .c-logo-main-text {
+      margin-left: rem(22px);
+    }
+}

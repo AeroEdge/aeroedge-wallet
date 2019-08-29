@@ -1,0 +1,200 @@
+// ==========================================================================
+// Table
+// ==========================================================================
+.c-table {
+    max-width: 100%;
+    width: auto;
+    max-height: rem(500px);
+    border: 1px solid $color-04;
+    border-radius: $border-radius-m;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    background-color: $color-01;
+
+    &.--sub {
+        display: table;
+        width: 100%;
+        background-color: $color-03;
+
+        > thead {
+            display: table-header-group;
+        }
+        > tbody {
+            display: table-row-group;
+        }
+
+        > tbody,
+        > thead {
+            > tr {
+                > th,
+                > td {
+                    background-color: $color-03;
+                    min-width: auto;
+                }
+            }
+        }
+    }
+
+    >thead {
+        overflow-y: auto !important;
+    }
+
+    > tbody,
+    > thead,
+    > tfoot {
+
+        > tr.c-table__more {
+            > td,
+            > td:first-child,
+            > td:last-child {
+                padding: 0;
+            }
+
+            .active.c-table__more__block {
+                opacity: 1;
+            }
+
+            .c-table__more__block {
+                height: 0;
+                transition: all 1.0s;
+                overflow: hidden;
+                opacity: 0;
+
+                &__inner {
+                    padding: rem(20px) rem(27.5px) rem(19px);
+                }
+            }
+        }
+
+        > tr {
+            width: 100%;
+
+            &.selected {
+                > th,
+                > td {
+                    background-color: $color-22;
+                }
+            }
+
+            &:first-child {
+                > td:before {
+                    display: none;
+                }
+            }
+
+            > th,
+            > td {
+                text-align: center;
+                vertical-align: top;
+                border: 0 solid #ddd;
+                padding: rem(20px) rem(35px) rem(19px);
+                background-color: $color-01;
+                width: auto;
+                min-width: rem(236px);
+
+                &:first-child {
+                    padding-left: rem(27.5px);
+                    &:before {
+                        left: rem(27.5px);
+                    }
+                }
+                &:last-child {
+                    padding-right: rem(27.5px);
+                    &:before {
+                        right: rem(27.5px);
+                    }
+                }
+            }
+
+            > th {
+                font-weight: 600;
+                font-size: $font-size-20px;
+                color: $color-16;
+                border-bottom: 1px solid $color-04;
+                vertical-align: middle;
+                white-space: nowrap;
+            }
+
+            > td {
+                position: relative;
+                color: $color-16;
+                font-size: $font-size-18px;
+                padding-top: rem(25px);
+                word-break: break-all;
+
+                &:before {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    display: block;
+                    content: '';
+                    border-top: 1px solid $color-04;
+                }
+            }
+        }//tr
+
+    }//tbody,thead
+
+    >tfoot {
+        overflow-y: auto !important;
+
+        > tr > td,
+        > tr > th {
+            border-top: 1px solid $color-04;
+        }
+    }
+
+    &--default {
+        @extend .c-table;
+    }
+
+    &--print {
+        @extend .c-table;
+        border-radius: 0;
+        width: 100%;
+
+        &.--inline {
+            width: auto;
+        }
+
+        > tbody,
+        > thead {
+            > tr {
+                > td,
+                > th {
+                    padding: rem(10px);
+                    min-width: 0;
+                    white-space: inherit;
+                }
+            }
+        }
+    }
+}
+
+table.scrolling.c-table--scroll-table {
+    @extend .c-table;
+    width: 100%;
+    height: rem(500px);
+    display: inline-flex;
+    background-color: #fff!important;
+
+    > tbody,
+    > thead {
+        > tr {
+            display: table;
+        }
+    }
+}
+
+div#report table.scrolling.c-table--scroll-table {
+    @extend table.scrolling.c-table--scroll-table;
+
+    > tbody,
+    > thead {
+        > tr {
+            display: table-row;
+        }
+    }
+}

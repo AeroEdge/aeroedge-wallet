@@ -1,0 +1,95 @@
+@import url('//fonts.googleapis.com/css?family=Roboto:200,400,500,700');
+@import url('//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
+@import url('//fonts.googleapis.com/earlyaccess/notosansjapanese.css');
+
+*,
+::before,
+::after {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    color: $font-color-base;
+}
+html{
+  font-size: 16px;
+  @include max-screen($break-point-pc-hd) {
+    font-size: 0.835vw;
+  }
+  @include max-screen($break-point-pc-tablet-max) {
+    font-size: 1rem;
+  }
+  @include max-screen($break-point-sp-max) {
+    font-size: 10px;
+  }
+}
+body {
+  font-size: rem(20px);
+  font-family: $font-opensans;
+  box-sizing: border-box;
+  background: $color-05;
+}
+a,
+input,
+button,
+textarea{
+  outline: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+input,
+button,
+textarea{
+  font-family: $font-opensans;
+}
+button{
+  display: inline-block;
+  width: auto;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+}
+
+input {
+  &::-ms-reveal {
+    visibility: hidden;
+  }
+  &::-ms-clear {
+    visibility: hidden;
+  }
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance:textfield;
+}
+
+// vue transition
+.fade-enter-active, .fade-leave-active {
+  transition: .5s opacity ease;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+.page-slide-enter-active, .page-slide-leave-active {
+  transition: all .5s ease;
+}
+.page-slide-leave-active{
+  transition-delay: .5s;
+}
+.page-slide-enter {
+  transform: translateX(100vw);
+}
+.page-slide-leave-to {
+  transform: translateX(-100vw);
+}

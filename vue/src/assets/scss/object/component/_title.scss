@@ -1,0 +1,45 @@
+// ==========================================================================
+// title
+// ==========================================================================
+.c-title--h3 {
+  margin: 0 0 rem(20px);
+  padding: 0;
+	font-size: $font-size-22px;
+  font-weight: 600;
+
+  & + .u-hr {
+    margin-top: rem(-14px);
+  }
+}
+
+.c-title--25px {
+  margin: 0;
+  font-size: $font-size-25px;
+  font-weight: 600;
+}
+
+.c-title--22px {
+  margin: 0;
+  font-size: $font-size-22px;
+  font-weight: 600;
+}
+
+.c-title--20px {
+  margin: 0;
+  font-size: $font-size-20px;
+  font-weight: 600;
+}
+
+.c-title--merchant {
+  display: flex;
+  align-items: center;
+
+  span {
+    margin-left: $mp-size-20px;
+    padding-left: $mp-size-20px;
+    font-size: $font-size-25px;
+    font-weight: normal;
+    line-height: rem(50px);
+    border-left: 1px solid $color-04;
+  }
+}

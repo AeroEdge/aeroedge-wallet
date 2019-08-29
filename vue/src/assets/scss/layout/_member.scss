@@ -1,0 +1,63 @@
+.l-memberWrapper{
+    display: flex;
+    background: $color-03;
+
+    .l-memberWrapper__inner--left {
+        position: relative;
+        z-index: 8;
+        width: $width-sideber;
+        min-width: $width-sideber;
+        box-shadow: $box-shadow-03;
+        transition: .5s all ease;
+
+        @include max-screen($break-point-tablet-max){
+            position: fixed;
+            top: 0;
+            left: $width-sideber * -1;
+            z-index: 1;
+            box-shadow: none;
+        }
+    }
+    .l-memberWrapper__inner--left--off {
+        position: relative;
+        z-index: 8;
+        width: $width-sideber-min;
+        min-width: $width-sideber-min;
+        box-shadow: $box-shadow-03;
+        transition: .5s all ease;
+
+        @include max-screen($break-point-tablet-max){
+            position: fixed;
+            top: 0;
+            left: $width-sideber-min * -1;
+            z-index: 1;
+            overflow: hidden;
+            box-shadow: none;
+        }
+
+        & + .l-memberWrapper__inner--right {
+            width: calc(100% - #{$width-sideber-min});
+            min-width: calc(100% - #{$width-sideber-min});
+        }
+    }
+
+    .l-memberWrapper__inner--right {
+        flex: 1;
+        min-height: 100%;
+        width: calc(100% - #{$width-sideber});
+        min-width: calc(100% - #{$width-sideber});
+        @include max-screen($break-point-tablet-max){
+            width: 100%;
+        }
+    }
+    .l-memberWrapper__inner--main {
+        flex: 1;
+        min-height: 100%;
+        padding: rem(19px) rem(20px) rem(19px) rem(24px);
+        background: $color-03;
+        
+        @include max-screen($break-point-tablet-max){
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,390 @@
+// ==========================================================================
+// Form Layout
+// ==========================================================================
+// Case: /accountSettings/
+.c-form--edit--wrap {
+    position: relative;
+    padding-right: rem(60px);
+}
+.c-form--edit {
+    position: absolute;
+    top: 0;
+    right: rem(13px);
+    font-weight: 600;
+    font-size: $font-size-16px;
+    color: $font-color-hover;
+    text-decoration: underline;
+}
+
+.c-form--wrap {
+    display: flex;
+    max-width: rem(700px);
+    align-items: start;
+}
+
+.c-form--list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding-left: 0;
+
+    .c-form--wavedash {
+        max-width: rem(304px);
+    }
+
+
+    input[class^="c-form--"] {
+        font-size: $font-size-15px;
+    }
+
+    .c-form--wrap {
+        padding: rem(16px) 0;
+    }
+
+    .c-form--list__label {
+        text-align: right;
+        min-width: 9em;
+    }
+    .c-form--list__field {
+        min-width: rem(330px + 25);
+        padding-right: rem(25px);
+        font-size: $font-size-16px;
+
+        .c-form--mask {
+            display: inline-block;
+        }
+    }
+    .c-from__note {
+        margin: 0 rem(20px);
+        font-size: $font-size-12px;
+
+        @include max-screen($break-point-pc-tablet-min) {
+            margin: rem(10px) 0;
+        }
+    }
+
+    &.--inline {
+        .c-form--list__field {
+            min-width: 0;
+        }
+        > li:nth-child(n+2) {
+            .c-form--list__label {
+                min-width: 0;
+            }
+        }
+    }
+
+    &.--cal1 li,
+    .c-form--list--cal1 {
+        width: 100%;
+
+        .c-form--wrap {
+            max-width: 100%;
+        }
+    }
+
+    &.--label--w10 {
+        .c-form--list__label {
+            min-width: 10em;
+        }
+    }
+}
+
+// Case: Date, Time etc
+.c-form--wavedash {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;、
+
+    .c-form--wavedash__symbol {
+        width: 1.65em;
+        text-align: center;
+    }
+
+    > *:not(.c-form--wavedash__symbol) {
+        width: calc((100% - 1.65em) / 2);
+        // width: rem(148px);
+    }
+
+}
+
+// ==========================================================================
+// Form Label
+// ==========================================================================
+.c-form--label {
+    font-size: $font-size-20px;
+    padding: 0 rem(20px) 0 0;
+    white-space: nowrap;
+
+    &.req {
+        &:after {
+            content: '*';
+        }
+    }
+}
+
+// ==========================================================================
+// Form Tel 3column
+// ==========================================================================
+.c-form--tel {
+    width: rem(268px);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    span {
+        width: rem(20px);
+        text-align: center;
+    }
+
+    input {
+        width: calc((100% - #{rem(40px)}) / 3);
+    }
+}
+
+// ==========================================================================
+// Form Type Text
+// ==========================================================================
+.c-form--input {
+    width: 100%;
+    font-size: inherit;
+    padding: 0 rem(10px);
+    line-height: calc(2.27em - 2px);
+    @include inputDesign();
+
+    &.--s {
+        width: rem(150px);
+    }
+    &.--m {
+        width: rem(220px);
+    }
+    &.--l {
+        width: rem(300px);
+    }
+    &.--l2 {
+        width: rem(330px);
+    }
+    &.--l3 {
+        width: rem(350px);
+    }
+    &.--X {
+        width: rem(600px);
+    }
+}
+
+// ==========================================================================
+// Form Mask
+// ==========================================================================
+.c-form--mask {
+    position: relative;
+
+    input[type="text"] + &__icon {
+        color: $color-18;
+    }
+
+    &__icon {
+        position: absolute;
+        right: 0.5em;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+// ==========================================================================
+// Form Type Search
+// ==========================================================================
+.c-form--search {
+    position: relative;
+
+    input {
+        @extend .c-form--input;
+        width: rem(307px);
+        padding-right: rem(60px);
+    }
+
+    &:after {
+        position: absolute;
+        top: 50%;
+        right: rem(23px);
+        content: '';
+        width: rem(25px);
+        height: rem(24px);
+        background-image: url(./assets/images/icon_search.svg);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        transform: translateY(-50%);
+    }
+}
+
+// ==========================================================================
+// Form Type Select
+// ==========================================================================
+.c-form--select {
+    overflow: hidden;
+    text-align: center;
+    max-width: rem(200px);
+
+    select {
+        width: 100%;
+        padding-right: rem(10px);
+        cursor: pointer;
+        text-indent: 0.01px;
+        text-overflow: ellipsis;
+        font-size: $font-size-15px;
+        border: none;
+        outline: none;
+        background: transparent;
+        background-image: none;
+        box-shadow: none;
+        -webkit-appearance: none;
+        appearance: none;
+
+        &::-ms-expand {
+            display: none;
+        }
+    }
+
+    &--style1 {
+        position: relative;
+        @include inputDesign();
+        @extend .c-form--select;
+
+        &::before {
+            position: absolute;
+            top: 50%;
+            right: 0.6em;
+            width: 0;
+            height: 0;
+            padding: 0;
+            content: '';
+            border-left: 0.45em solid transparent;
+            border-right: 0.45em solid transparent;
+            border-top: 0.45em solid $color-04;
+            pointer-events: none;
+            transform: translateY(-0.1em);
+        }
+
+        select {
+            padding: 0 2.5em 0 1em;
+            line-height: 2.18em;
+            color: inherit;
+        }
+
+    }
+}
+
+// ==========================================================================
+// Form Type File
+// ==========================================================================
+.c-from--file {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    // padding: rem(6px) rem(3px);
+
+    &__btn {
+        color: $color-08;
+        cursor: pointer;
+        padding: rem(2px) rem(15px);
+        margin-right: rem(6px);
+        display: inline-block;
+        font-size: $font-size-14px;
+        box-shadow: 0 rem(3px) rem(6px) $color-04;
+        @include inputDesign();
+    }
+    &__file {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: none;
+        box-shadow: none;
+        border: none;
+        font-size: 4rem;
+        opacity: 0;
+    }
+    &__name {
+        outline: none;
+        background: #fff;
+        border: 0;
+        color: $color-14;
+        font-size: $font-size-12px;
+    }
+}
+
+// ==========================================================================
+// Form checkbox
+// ==========================================================================
+.c-form--checkbox {
+    position: relative;
+    display: flex;
+    align-items: top;
+
+    &__btn {
+        position: relative;
+        width: rem(20px);
+        height: rem(20px);
+        margin-top: 0.25em;
+    }
+
+    &__text {
+        font-size: $font-size-18px;
+        line-height: 1.75em;
+        margin-left: rem(10px);
+    }
+
+    .c-form--checkbox--input {
+        display: block;
+        width: rem(20px);
+        height: rem(20px);
+        opacity: 0;
+
+        &:checked + .c-form--checkbox--icon {
+            i {
+                display: block;
+            }
+        }
+    }
+
+    .c-form--checkbox--icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: rem(20px);
+        height: rem(20px);
+        box-shadow: 0 rem(3px) rem(6px) $color-04;
+        @include inputDesign();
+
+        i {
+            position: absolute;
+            top: 50%;
+            right: 50%;
+            font-size: 1rem;
+            display: none;
+            transform: translate(50%, -50%);
+        }
+
+        &.--active {
+            i {
+                display: block;
+            }
+        }
+    }
+}
+
+// ==========================================================================
+// Form Coin Amount
+// ==========================================================================
+.c-form--coinAmount {
+    @include inputDesign();
+    width: 100%;
+    max-width: rem(300px);
+    font-size: inherit;
+    padding: 0 rem(10px);
+    line-height: calc(2.27em - 2px);
+    border-width: 0px;
+    border-style: none;
+    font-size: $font-size-40px;
+    text-align: right;
+}

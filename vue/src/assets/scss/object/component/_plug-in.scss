@@ -1,0 +1,365 @@
+// ==========================================================================
+// plug-in datepicker
+// ==========================================================================
+.c-plug-in--datepicker {
+    @include inputDesign();
+    padding: 0 rem(22px);
+    line-height: 2.15em;
+    height: rem(46px);
+
+    &--date {
+        .vdpOuterWrap.vdpFloating {
+            font-size: 10px;
+        }
+        .vdpComponent {
+            font-size: inherit;
+            max-width: 100%;
+        }
+        .vdpClearInput:before {
+            line-height: inherit;
+        }
+        .vdpWithInput {
+            > input {
+                @extend .c-plug-in--datepicker;
+                max-width: 100%;
+                font-size: inherit;
+                height: 2.3em;
+            }
+        }
+    }
+
+    &--time {
+        .time-picker {
+            width: auto;
+
+            input.display-time {
+                @extend .c-plug-in--datepicker;
+                max-width: rem(173px);
+                width: 100%;
+                height: auto;
+            }
+        }
+        .clock-picker {
+            width: auto;
+
+            input.clock-picker__input {
+                @extend .c-plug-in--datepicker;
+                max-width: rem(173px);
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+    &--month {
+        .month-year-display .input {
+            @extend .c-plug-in--datepicker;
+        }
+    }
+}
+
+// ==========================================================================
+// plug-in vue-monthly-picker
+// ==========================================================================
+.c-plug-in--monthlypicker {
+    .vue-monthly-picker .input {
+        @extend .c-plug-in--datepicker;
+        box-shadow: none;
+        font-size: inherit;
+        height: auto;
+    }
+}
+
+// ==========================================================================
+// plug-in vselect
+// ==========================================================================
+.c-plug-in--vselect {
+    width: rem(200px);
+    font-size: inherit;
+
+    &:not(.--no-flame) .v-select {
+
+        &.disabled {
+            pointer-events:none;
+            cursor: not-allowed;
+
+            .dropdown-toggle {
+                background: $color-11;
+
+                .open-indicator {
+                    background: $color-11;
+                }
+            }
+        }
+
+        .dropdown-toggle {
+            @include inputDesign();
+            padding: 0;
+            min-height: 2.25em;
+
+            .clear {
+                display: none;
+            }
+
+            .vs__actions {
+                padding: 0;
+            }
+
+            .vs__selected-options {
+                white-space: nowrap;
+                overflow: hidden;
+            }
+
+            .open-indicator {
+                width: 1.4em;
+                &::before {
+                    position: relative;
+                    right: 0;
+                    top: 0.1em;
+                    width: 0;
+                    height: 0;
+                    padding: 0;
+                    content: '';
+                    border-left: 0.45em solid transparent;
+                    border-right: 0.45em solid transparent;
+                    border-top: 0.45em solid $color-04;
+                    pointer-events: none;
+                    transform: translateY(-0.1em);
+                }
+            }
+        }
+
+        .selected-tag {
+            color: inherit;
+            margin: 0;
+            padding: 0 2.5em 0 1em;
+            border: 0;
+            line-height: 2.18em;
+            min-width: 100%;
+        }
+
+        .vs__selected-options {
+            padding: 0;
+        }
+
+        input[type="search"] {
+            padding: 0;
+            margin: 0;
+            height: 0;
+            border: 0;
+            line-height: 2.18em;
+        }
+
+        input[type="search"],
+        input[type="search"]:focus {
+            color: $color-01;
+            border: 0;
+        }
+
+        /* Dropdown Menu */
+        .dropdown-menu {
+            min-width: 100%;
+            width: auto;
+            padding: 0;
+            color: $color-01;
+            border: 1px solid rgba($color-01,0);
+            box-sizing: border-box;
+            box-shadow: none;
+
+            > * {
+                font-size: inherit;
+            }
+
+            li {
+                position: relative;
+                line-height: 2.18em;
+
+                a {
+                  padding: 0.3em 3em 0.3em 1.3em;
+                }
+
+                & + li a {
+                    position: relative;
+
+                    &:before {
+                        position: absolute;
+                        top: 0;
+                        left: 0.7em;
+                        right: 0.7em;
+                        display: block;
+                        content: '';
+                        border-top: 1px solid $color-13;
+                    }
+                }
+            }
+        }
+
+
+        &.open {
+
+            input[type="search"] {
+                padding: 0;
+                width: 100%;
+                height: auto;
+            }
+            .dropdown-menu {
+                border-color: rgba($color-13,1);
+            }
+            .dropdown-toggle {
+                border-radius: $border-radius-m $border-radius-m 0 0;
+                border-bottom: 1px solid rgba($color-13,0);
+            }
+            .open-indicator:before {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    // no-flame
+    &.--no-flame {
+        width: auto;
+        min-width: rem(210px);
+    }
+    &.--no-flame .v-select {
+        // max-width: rem(176px);
+        width: auto;
+
+        .dropdown-toggle {
+            border: 0;
+            // @include inputDesign();
+            padding: 0;
+
+            .clear {
+                display: none;
+            }
+
+            .vs__actions {
+                padding: 0;
+            }
+
+            .vs__selected-options {
+                white-space: nowrap;
+                overflow: hidden;
+            }
+
+            .open-indicator {
+                width: 1.4em;
+                transform-origin: center;
+                &::before {
+                    position: relative;
+                    right: rem(-6.5px);
+                    top: 50%;
+                    width: rem(12px);
+                    height: rem(12px);
+                    padding: 0;
+                    margin-top: -2.5em;
+                    content: '';
+                    border-top: rem(3px) solid $color-08;
+                    border-right: rem(3px) solid $color-08;
+                    pointer-events: none;
+                    transform: rotate(133deg);
+                }
+            }
+        }
+
+        .selected-tag {
+            color: inherit;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            line-height: 2.18em;
+            min-width: 100%;
+        }
+
+        .vs__selected-options {
+            padding: 0;
+        }
+
+        input[type="search"] {
+            padding: 0;
+            margin: 0;
+            height: 0;
+            border: 0;
+            line-height: 2.18em;
+        }
+
+        input[type="search"],
+        input[type="search"]:focus {
+            color: $color-01;
+            border: 0;
+        }
+
+        /* Dropdown Menu */
+        .dropdown-menu {
+            display: table;
+            right: 0;
+            background: $color-01;
+            border-radius: $border-radius-m;
+            min-width: 100%;
+            width: auto;
+            padding: 0 rem(10.5px);
+            box-shadow: $box-shadow-01;
+
+            > * {
+                font-size: inherit;
+                color: inherit;
+            }
+
+            li {
+                position: relative;
+                line-height: 2.18em;
+
+                a {
+                  padding: 0.3em 3em 0.3em 1.3em;
+                  color: inherit;
+                }
+
+                &.highlight > a {
+                    color: inherit;
+                    background: inherit;
+                }
+
+                &.active {
+                    display: none;
+                }
+
+                &:nth-child(0) + li a {
+                    position: relative;
+
+                    &:before {
+                        position: absolute;
+                        top: 0;
+                        left: 0.7em;
+                        right: 0.7em;
+                        display: block;
+                        content: '';
+                        border-top: 1px solid $color-13;
+                    }
+                }
+            }
+        }
+
+
+        &.open {
+            input[type="search"] {
+                padding: 0;
+            }
+            .selected-tag {
+                position: relative;
+            }
+            .dropdown-menu {
+                border-color: rgba($color-13,1);
+            }
+            .dropdown-toggle {
+                border-radius: $border-radius-m $border-radius-m 0 0;
+                border-bottom: 1px solid rgba($color-13,0);
+            }
+            .open-indicator {
+                transform: rotate(180deg);
+            }
+            .open-indicator:before {
+                transform: rotate(133deg);
+            }
+        }
+    }
+}

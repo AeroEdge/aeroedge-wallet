@@ -1,0 +1,62 @@
+.c-terms {
+
+    &--intro {
+        padding: 0 rem(14px);
+    }
+
+    &--section {
+        margin-top: rem(30px);
+
+        &__title {
+            font-weight: bold;
+        }
+    }
+
+    &--contents {
+        padding-left: rem(10px);
+
+        p {
+            padding-left: 1em;
+            text-indent: -1em;
+        }
+
+        &.no-indent {
+            p {
+                padding-left: rem(0px);
+                text-indent: rem(0px);
+            }
+        }
+
+        &__sub {
+            padding-left: rem(10px);
+
+            p {
+                padding-left: 2.5em;
+                text-indent: -2.5em;
+            }
+        }
+
+        &__address {
+            margin-right: rem(10px);
+
+            @include max-screen($break-point-sp-max){
+                margin-right: rem(200px);
+            }
+        }
+    }
+}
+
+.c-form--terms {
+    width: 100%;
+    height: rem(530px);
+    margin-top: rem(20px);
+    padding: 0 rem(20px);
+    border: 1px solid $color-04;
+    overflow: scroll;
+    font-size: $font-size-18px;
+}
+
+.c-text--terms {
+    font-size: $font-size-22px;
+    text-align: center;
+}

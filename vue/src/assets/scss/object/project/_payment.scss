@@ -1,0 +1,58 @@
+.c-ent__inner__tenkey {
+    margin: rem(20px) 0 0 rem(30px);
+    padding: 0;
+    width: rem(320px);
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    font-size: $font-size-40px;
+    button{
+        // border: 1px solid $color-04;
+        width: rem(105px);
+        height: rem(85px);
+        box-sizing: content-box;
+        &:hover{
+            background: $color-04;
+        }
+    }
+    li:not(:last-child):not(:nth-child(3n)){
+        button{
+            border-right: 0;
+        }
+    }
+    li:nth-child(3n){
+        button{
+            border-bottom: 0;
+        }
+    }
+    li:nth-child(10){
+        button{
+            &:hover{
+                background: $color-01;
+            }
+        }
+    }
+    li:last-child{
+        button{
+            border-top: 0;
+        }
+    }
+}
+
+.c-ent__payment__label {
+    padding: 0 rem(35px);
+    font-size: $font-size-15px;
+}
+
+.c-ent__amount {
+    text-align: center;
+    border-bottom: 1px solid $color-04;
+
+    &__label {
+        margin: rem(30px) 0 0 0;
+        text-align: center;
+        font-size: $font-size-30px;
+    }
+}

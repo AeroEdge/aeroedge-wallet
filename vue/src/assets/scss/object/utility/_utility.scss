@@ -1,0 +1,161 @@
+
+$sides: (top, bottom, left, right);
+$sides2: (center, left, right);
+
+// ==========================================================================
+// Clear Fix
+// ==========================================================================
+.clearfix:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+// ==========================================================================
+// utils display
+// ==========================================================================
+.u-flex {
+  display: flex;
+
+  &--wrap {
+    flex-wrap: wrap;
+  }
+
+  &--sp--none {
+    @extend .u-flex;
+
+    @include max-screen($break-point-pc-tablet-min) {
+      display: block;
+    }
+  }
+}
+
+.u-jc--sb {
+  justify-content: space-between;
+}
+
+.u-item--center {
+  align-items: center;
+}
+
+.u-block {
+  display: block !important;
+}
+
+.u-hidden {
+  display: none !important;
+}
+
+.u-inline {
+  display: inline !important;
+}
+
+.u-inlineBlock {
+  display: inline-block !important;
+  max-width: 100%; /* for Firefox bug */
+}
+
+.u-tableCell {
+  display: table-cell !important;
+}
+
+.u-tableRow {
+  display: table-row !important;
+}
+
+// ==========================================================================
+// utils width
+// ==========================================================================
+.u-w--100per {
+  width: 100%;
+}
+
+.u-minw--19rem {
+  min-width: 19rem!important;
+}
+
+.u-maxw--1000px {
+  max-width: rem(1000px)
+}
+
+// ==========================================================================
+// utils height
+// ==========================================================================
+.u-h--100per {
+  height: 100%;
+}
+
+// ==========================================================================
+// utils margin & padding
+// ==========================================================================
+$spaceamounts: (0px,10px,15px,20px,21px,30px,35px,40px,50px,60px);
+
+@each $space in $spaceamounts {
+  @each $side in $sides {
+    .u-m#{str-slice($side, 0, 1)}--#{$space} {
+      margin-#{$side}: rem($space) !important;
+    }
+
+    .u-p#{str-slice($side, 0, 1)}--#{$space} {
+      padding-#{$side}: rem($space) !important;
+    }
+  }
+}
+
+// ==========================================================================
+// utils font size
+// ==========================================================================
+$fontsizes: (12px,16px,18px,15px,22px,30px,40px);
+
+@each $fontsize in $fontsizes {
+  .u-font--#{$fontsize} {
+    font-size: rem($fontsize) !important;
+  }
+}
+
+// ==========================================================================
+// utils text
+// ==========================================================================
+.u-text {
+  @each $side in $sides2 {
+    &--#{$side} {
+      text-align: $side !important;
+    }
+  }
+}
+
+// ==========================================================================
+// utils hr
+// ==========================================================================
+.u-hr {
+  margin: rem(20px) 0 ;
+  border: 0;
+  border-bottom: 1px solid $color-04;
+
+  &.home {
+    @include max-screen($break-point-tablet-max) {
+      display: none;
+    }
+  }
+}
+
+// ==========================================================================
+// utils text
+// ==========================================================================
+.u-color {
+  &--green {
+    color: $color-17;
+  }
+  &--gray {
+    color: $color-04;
+  }
+  &--inherit {
+    color: inherit;
+  }
+  &--red {
+    color: $color-19;
+  }
+  &--cancel {
+    color: $color-19;
+  }
+}

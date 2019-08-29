@@ -1,0 +1,270 @@
+// ==========================================================================
+// icon
+// ==========================================================================
+.c-icon {
+  display: inline-block;
+  position: relative;
+  width: rem(40px);
+
+  img {
+    display: none;
+  }
+
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    display: block;
+    content: '';
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+
+}
+
+.c-icon--user {
+  @extend .c-icon;
+  padding-top: rem(48px);
+
+  &:after {
+    width: rem(48px);
+    background-image: url(./assets/images/icon_user.svg);
+  }
+}
+
+.c-icon--history {
+  @extend .c-icon;
+  padding-top: rem(27px);
+
+  &:after {
+    width: rem(20px);
+    background-image: url(./assets/images/icon_history.svg);
+  }
+}
+
+.c-icon--reconciliation {
+  @extend .c-icon;
+  padding-top: rem(40px);
+
+  &:after {
+    width: rem(26px);
+    background-image: url(./assets/images/icon_reconciliation.svg);
+  }
+}
+
+.c-icon--payment {
+  @extend .c-icon;
+  padding-top: rem(24px);
+
+  &:after {
+    width: rem(35px);
+    background-image: url(./assets/images/icon_payment.svg);
+  }
+}
+
+.c-icon--dataManagement {
+  @extend .c-icon;
+  padding-top: rem(36px);
+
+  &:after {
+    width: rem(35px);
+    background-image: url(./assets/images/icon_data_management.svg);
+  }
+}
+
+.c-icon--settings {
+  @extend .c-icon;
+  padding-top: rem(27px);
+
+  &:after {
+    width: rem(26px);
+    background-image: url(./assets/images/icon_setting.svg);
+  }
+}
+
+.c-icon--qr {
+  @extend .c-icon;
+  padding-top: rem(27px);
+
+  &:after {
+    width: rem(27px);
+    background-image: url(./assets/images/icon_qr.svg);
+  }
+}
+
+.c-icon--refund {
+  @extend .c-icon;
+  padding-top: rem(28px);
+
+  &:after {
+    width: rem(39px);
+    background-image: url(./assets/images/icon_refund.svg);
+  }
+}
+
+.c-icon--refund-history {
+  @extend .c-icon;
+  padding-top: rem(32px);
+
+  &:after {
+    width: rem(32px);
+    background-image: url(./assets/images/icon_refundhistory.svg);
+  }
+}
+
+.c-icon--settlement {
+  @extend .c-icon;
+  padding-top: rem(28px);
+
+  &:after {
+    width: rem(20px);
+    background-image: url(./assets/images/icon_settlement-history.svg);
+  }
+}
+
+.c-icon--print {
+  @extend .c-icon;
+  width: rem(19.5px);
+  padding-top: rem(17.17px);
+
+  &:after {
+    width: rem(19.5px);
+    background-image: url(./assets/images/icon_print.svg);
+  }
+}
+
+.c-icon--download {
+  @extend .c-icon;
+  width: rem(12.8px);
+  padding-top: rem(17px);
+
+  &:after {
+    width: rem(12.8px);
+    background-image: url(./assets/images/icon_download.svg);
+  }
+}
+
+.c-icon--marketing {
+  @extend .c-icon;
+  width: rem(39px);
+  padding-top: rem(35px);
+
+  &:after {
+    width: rem(39px);
+    background-image: url(./assets/images/icon_marketing.svg);
+  }
+}
+
+// ==========================================================================
+// complete
+// ==========================================================================
+.c-icon--complete {
+  display: inline-block;
+  position: relative;
+  padding-top: rem(100px) !important;
+
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: rem(96px);
+    height: rem(76px);
+    margin: auto;
+    display: block;
+    content: '';
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-image: url(./assets/images/icon_success.svg);
+  }
+}
+
+// ==========================================================================
+// loading
+// ==========================================================================
+.c-icon-loading {
+  display: inline-block;
+  width: 78px;
+  height: 78px;
+  position: relative;
+
+  & + .c-title--h3 {
+    margin-top: $mp-size-20px;
+  }
+}
+.c-icon-loading__ber {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.c-icon-loading__ber:before {
+  position: relative;
+  content: '';
+  display: block;
+  margin: 0 auto;
+  width: rem(7px);
+  height: rem(22px);
+  background-color: $color-20;
+  border-radius: rem(4px);
+  -webkit-animation: circleFadeDelay 1.0s infinite ease-in-out both;
+          animation: circleFadeDelay 1.0s infinite ease-in-out both;
+}
+@for $i from 1 through 10 {
+  .c-icon-loading .c-icon-loading__ber:nth-child(#{$i}) {
+    transform: rotate(36deg * $i);
+  }
+}
+@for $i from 0 through 9 {
+  .c-icon-loading .c-icon-loading__ber:nth-child(#{($i + 1)}):before {
+    animation-delay: -0.1s * $i;
+  }
+}
+@-webkit-keyframes circleFadeDelay {
+  0%, 39%, 100% { opacity: 0; }
+  40% { opacity: 1; }
+}
+
+@keyframes circleFadeDelay {
+  0%, 39%, 100% { opacity: 0; }
+  40% { opacity: 1; }
+}
+
+// ==========================================================================
+// type
+// ==========================================================================
+.c-icon--type {
+    min-width: rem(120px);
+    padding: rem(7.76px) rem(22.8px);
+    margin-left: rem(20px);
+    border-radius: $border-radius-ll;
+    font-size: $font-size-12px;
+    font-weight: bold;
+    text-align: center;
+    background: $color-24;
+    color: $color-01;
+    line-height: rem(56px);
+    border-style: solid;
+    border-width: 1px;
+    border-color: $color-24;
+
+    &.bonus {
+      min-width: rem(120px);
+      padding: rem(7.76px) rem(22.8px);
+      border-radius: $border-radius-ll;
+      font-size: $font-size-12px;
+      font-weight: bold;
+      text-align: center;
+      background: $color-25;
+      color: $color-01;
+      line-height: rem(56px);
+      border-style: solid;
+      border-width: 1px;
+      border-color: $color-25;
+    }
+}

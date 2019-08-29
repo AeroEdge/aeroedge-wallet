@@ -1,0 +1,27 @@
+// ==========================================================================
+// error - 404
+// ==========================================================================
+.l-error {
+    .c-ent--box {
+        padding-bottom: rem(45px);
+    }
+    &__ttl {
+        margin-top: rem(27px);
+        font-size: rem(100px);
+
+        & + * {
+            margin-top: rem(13px);
+            margin-bottom: rem(13px);
+        }
+    }
+    &__txt--01 {
+        font-size: rem(30px);
+    }
+    &__btn {
+        margin-top: rem(60px);
+
+        &.c-ent__btn [class^="c-btn"] {
+            min-width: rem(257px);
+        }
+    }
+}

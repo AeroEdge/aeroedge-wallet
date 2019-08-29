@@ -1,0 +1,25 @@
+// ==========================================================================
+// Block
+// ==========================================================================
+.c-block {
+  &--01 {
+    padding: 0 $mp-size-10px;
+    margin: $mp-size-20px 0;
+  }
+
+  &--02 {
+    margin-right: $mp-size-20px;
+
+    .p-main__inner__title {
+      margin-left: rem(5px);
+    }
+  }
+
+  &--indent {
+    padding: 0 0 0 $mp-size-30px;
+  }
+
+  &--scroll {
+    overflow: scroll;
+  }
+}

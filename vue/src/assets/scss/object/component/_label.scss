@@ -1,0 +1,25 @@
+// ==========================================================================
+// label
+// ==========================================================================
+.c-label {
+  display: inline-block;
+  border-radius: $border-radius-m;
+  font-size: inherit;
+  padding: 0.5em 0.8em;
+  border-width: 1px;
+  border-style: solid;
+  vertical-align: bottom;
+  white-space: nowrap;
+  min-width: rem(120px);
+
+  &--noborder {
+    @extend .c-label;
+    border-color: rgba(0,0,0,0);
+  }
+
+  &--confirmed {
+    @extend .c-label;
+    border-color: $color-17;
+    color: $color-17;
+  }
+}
