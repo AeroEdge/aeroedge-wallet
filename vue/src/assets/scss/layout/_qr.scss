@@ -1,0 +1,23 @@
+.l-qrWrapper{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+  background: $color-29;
+
+  .l-qrWrapper__inner--bottom {
+      position: relative;
+      width: 100%;
+      min-width: 100%;
+      height: 12vh;
+      background: $color-01;
+      border-top: rem(0.5px) solid $color-13;
+  }
+
+  .l-qrWrapper__inner--main {
+      position: relative;
+      min-height: rem(400px);
+      height: 88vh;
+      padding: rem(160px) rem(80px) rem(52px);
+  }
+}

@@ -25,12 +25,15 @@
                   <li class="c-top__list__data" v-for="item in historyList.entries" :key="item.tx_id" @click="openDetail(item)">
                       <div>
                         <span v-if="item.type === 'redeem'">{{ $tc('salesHistory.content.lunch') }}</span>
+                        <span v-else-if="item.type === 'payment'">{{ $tc('salesHistory.content.AEMart') }}</span>
                         <span v-else>{{ $tc('salesHistory.content.suggestion') }}</span>
                         <span class="c-icon--type" v-if="item.type === 'redeem'">{{ $tc('salesHistory.type.redeem') }}</span>
+                        <span class="c-icon--type" v-else-if="item.type === 'payment'">{{ $tc('salesHistory.type.payment') }}</span>
                         <span class="c-icon--type bonus" v-else>{{ $tc('salesHistory.type.reward') }}</span>
                         <p class="c-text--date">{{ item.created_at }}</p>
                       </div>
                       <div class="c-text--transaction" v-if="item.type === 'redeem'">- {{ item.currencies.edge | addDelimiter }} COINS</div>
+                      <div class="c-text--transaction" v-else-if="item.type === 'payment'">- {{ item.currencies.edge | addDelimiter }} COINS</div>
                       <div class="c-text--transaction plus" v-else>+ {{ item.currencies.edge | addDelimiter}} COINS</div>
                   </li>
                 </ul>
@@ -49,9 +52,8 @@
           <router-link :to="{ name: 'Payment'}" >
             <button class="c-btn--payment" type="button">{{ $tc('common.btn.payment') }}</button>
           </router-link>
-          <link href="vue-qrcode-reader.css" rel="stylesheet">
-          <router-link :to="{ name: 'Payment_Mart'}" >
-            <button class="c-btn--payment" type="button">{{ $tc('common.btn.payment_Mart') }}</button>
+          <router-link :to="{ name: 'PaymentQR'}" >
+            <button class="c-btn--payment" type="button">{{ $tc('common.btn.paymentQR') }}</button>
           </router-link>
         </div>
       </div><!-- c-top--wrapper__inner -->
@@ -78,7 +80,6 @@
   </div><!-- c-top-->
 </template>
 
-<script src="vue-qrcode-reader.browser.js"></script>
 <script>
 import { mapGetters, mapMutations, mapActions } from 'vuex'
 import defaultModal from '@/components/modal/DefaultModal'
