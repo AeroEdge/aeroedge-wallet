@@ -3,6 +3,7 @@ import VeeValidate, { Validator } from 'vee-validate'
 import validation from '../validations'
 import utils from '@/utils'
 import { i18n } from '../main.js'
+import VueQrcodeReader from 'vue-qrcode-reader'
 
 export default {
   namespaced: true,

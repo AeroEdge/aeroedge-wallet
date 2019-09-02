@@ -9,6 +9,7 @@ import router from './router'
 import store from './vuex'
 import filter from './filters'
 import validation from './validations'
+import VueQrcodeReader from 'vue-qrcode-reader'
 import utils from './utils'
 import VueI18n from 'vue-i18n'
 
@@ -19,6 +20,8 @@ export const i18n = new VueI18n({
   locale: 'ja',
   messages: data
 })
+
+Vue.use(VueQrcodeReader)
 
 // validation設定
 Validator.localize('ja', ja)

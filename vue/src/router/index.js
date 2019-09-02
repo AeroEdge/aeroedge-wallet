@@ -3,14 +3,15 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import MemberLayout from '@/layouts/Member'
 import SignInLayout from '@/layouts/SignIn'
-
+import QRLayout from '@/layouts/QR'
 
 // Pages
 import LoginPage from '@/pages/Login'
 import TopPage from '@/pages/Top'
 import SalesHistoryPage from '@/pages/SalesHistory'
 import PaymentPage from '@/pages/Payment'
-import PaymentMartPage from '@/pages/Payment_Mart'
+import PaymentQRPage from '@/pages/PaymentQR'
+import PaymentMartPage from '@/pages/PaymentMart'
 import ChangePasswordPage from '@/pages/ChangePassword'
 import ResetPasswordRecoverPage from '@/pages/ResetPasswordRecover'
 import ResetPasswordRecoverSubmitPage from '@/pages/ResetPasswordRecoverSubmit'
@@ -75,8 +76,8 @@ export default new Router({
           meta: {requiresAuth: true}
         },
         {
-          path: 'payment_Mart',
-          name: 'Payment_Mart',
+          path: 'PaymentMart',
+          name: 'PaymentMart',
           component: PaymentMartPage,
           meta: {requiresAuth: true}
         },
@@ -90,6 +91,20 @@ export default new Router({
           path: 'terms',
           name: 'Terms',
           component: TermsPage,
+          meta: {requiresAuth: true}
+        }
+      ]
+    },
+    {
+      path: '/member',
+      redirect: 'member/top',
+      component: QRLayout,
+      meta: {requiresAuth: true},
+      children: [
+        {
+          path: 'paymentQR',
+          name: 'PaymentQR',
+          component: PaymentQRPage,
           meta: {requiresAuth: true}
         }
       ]
