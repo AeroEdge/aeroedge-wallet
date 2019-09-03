@@ -32,7 +32,7 @@ export default {
           code: 'edge'
         },
         participants: {
-          merchant: "aemart01"
+          merchant: 'aemart01'
         }
       }
       return new Promise((resolve, reject) => {
