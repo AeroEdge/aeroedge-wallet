@@ -154,11 +154,9 @@ export default {
     openDetail (val) {
       if (val.type === 'redeem') {
         this.selectedDetail.title = this.$tc('salesHistory.content.lunch')
-      }
-      else if (val.type === 'payment') {
+      } else if (val.type === 'payment') {
         this.selectedDetail.title = this.$tc('salesHistory.content.AEMart')
-      }
-      else {
+      } else {
         this.selectedDetail.title = this.$tc('salesHistory.content.suggestion')
       }
       this.selectedDetail.currencies = val.currencies.edge
