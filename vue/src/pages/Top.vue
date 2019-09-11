@@ -50,7 +50,7 @@
         </div><!-- c-top--box -->
         <div class="c-top__btn">
           <router-link :to="{ name: 'Payment'}" >
-            <button class="c-btn--payment" type="button" style="width: 15px">{{ $tc('common.btn.payment') }}</button>
+            <button class="c-btn--payment" type="button">{{ $tc('common.btn.payment') }}</button>
           </router-link>
           <router-link :to="{ name: 'PaymentQR'}" >
             <button class="c-btn--payment" type="button">{{ $tc('common.btn.paymentQR') }}</button>
