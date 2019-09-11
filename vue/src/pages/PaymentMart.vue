@@ -72,7 +72,9 @@
         <p>{{$tc('common.modal.complete_amount')}} {{ paymentCoinAmount | addDelimiter }} <span v-if="paymentCoinAmount === '1'">COIN</span><span v-else>COINS</span></p>
       </template>
       <template slot="footer">
-        <button class="c-btn--default" @click="afterComplete">OK</button>
+        <router-link :to="{ name: 'Top'}" >
+          <button class="c-btn--default" @click="afterComplete">OK</button>
+        </router-link>
       </template>
     </defaultModal>
 
