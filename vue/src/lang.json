@@ -56,8 +56,8 @@
         "sign_in": "ログイン",
         "next": "次へ",
         "payment": "ランチ",
-        "paymentQR": "AEマート",
-        "paymentMart": "AEマート",
+        "paymentQR": "QRコード",
+        "paymentMart": "QRコード",
         "view_all": "すべて見る",
         "confirm": "確認",
         "sended_payment": "お支払いいたしました"
@@ -112,11 +112,11 @@
       "type": {
         "redeem": "支払い",
         "reward": "付与",
-        "payment": "AEマート"
+        "payment": "QRコード"
       },
       "content": {
         "lunch": "昼食代に充当",
-        "AEMart": "AEマート充当",
+        "AEMart": "QRコード充当",
         "suggestion": "イイね！"
       },
       "no_data": "現在の取引履歴はありません"
@@ -161,7 +161,7 @@
     },
 
     "payment": {
-      "AEMart": "AEマート",
+      "AEMart": "QRコード",
       "balance": "残高",
       "amount": "金額",
       "input_amount": "入力金額",
