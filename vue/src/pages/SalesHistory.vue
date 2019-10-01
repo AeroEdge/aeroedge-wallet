@@ -22,14 +22,17 @@
                     <div>
                       <span v-if="item.type === 'redeem'">{{ $tc('salesHistory.content.lunch') }}</span>
                       <span v-else-if="item.type === 'payment'">{{ $tc('salesHistory.content.AEMart') }}</span>
+                      <span v-else-if="item.type === 'reversal'">{{ $tc('salesHistory.content.suggestion_rev') }}</span>
                       <span v-else>{{ $tc('salesHistory.content.suggestion') }}</span>
                       <span class="c-icon--type" v-if="item.type === 'redeem'">{{ $tc('salesHistory.type.redeem') }}</span>
                       <span class="c-icon--type" v-else-if="item.type === 'payment'">{{ $tc('salesHistory.type.payment') }}</span>
+                      <span class="c-icon--type" v-else-if="item.type === 'reversal'">{{ $tc('salesHistory.type.reward_rev') }}</span>
                       <span class="c-icon--type bonus" v-else>{{ $tc('salesHistory.type.reward') }}</span>
                       <p class="c-text--date">{{ item.created_at }}</p>
                     </div>
                     <div class="c-text--transaction" v-if="item.type === 'redeem'">- {{ item.currencies.edge | addDelimiter }} COINS</div>
                     <div class="c-text--transaction" v-else-if="item.type === 'payment'">- {{ item.currencies.edge | addDelimiter }} COINS</div>
+                    <div class="c-text--transaction" v-else-if="item.type === 'reversal'">- {{ item.currencies.edge | addDelimiter }} COINS</div>
                     <div class="c-text--transaction plus" v-else>+ {{ item.currencies.edge | addDelimiter }} COINS</div>
                   </li>
                 </ul>
@@ -57,6 +60,8 @@
       <template slot="content">
         <p class="u-font--30px u-mt--10px u-mb--10px"><span class="u-font--40px">{{ selectedDetail.currencies | addDelimiter }}</span> COINS</p>
         <span class="c-icon--type" v-if="selectedDetail.type === 'redeem'">{{ $tc('salesHistory.type.redeem') }}</span>
+        <span class="c-icon--type" v-else-if="selectedDetail.type === 'payment'">{{ $tc('salesHistory.type.payment') }}</span>
+        <span class="c-icon--type" v-else-if="selectedDetail.type === 'reversal'">{{ $tc('salesHistory.type.reward_rev') }}</span>
         <span class="c-icon--type bonus" v-else>{{ $tc('salesHistory.type.reward') }}</span>
       </template>
       <template slot="footer">
@@ -156,6 +161,8 @@ export default {
         this.selectedDetail.title = this.$tc('salesHistory.content.lunch')
       } else if (val.type === 'payment') {
         this.selectedDetail.title = this.$tc('salesHistory.content.AEMart')
+      } else if (val.type === 'reversal') {
+        this.selectedDetail.title = this.$tc('salesHistory.content.suggestion_rev')
       } else {
         this.selectedDetail.title = this.$tc('salesHistory.content.suggestion')
       }
