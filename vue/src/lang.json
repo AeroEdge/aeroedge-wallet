@@ -112,12 +112,14 @@
       "type": {
         "redeem": "支払い",
         "reward": "付与",
+        "reward_rev": "付与訂正",
         "payment": "QRコード"
       },
       "content": {
         "lunch": "昼食代に充当",
         "AEMart": "QRコード充当",
-        "suggestion": "イイね！"
+        "suggestion": "イイね！",
+        "suggestion_rev": "イイね！訂正"
       },
       "no_data": "現在の取引履歴はありません"
     },
@@ -134,11 +136,11 @@
     "resetPasswordForced": {
       "title": "パスワードを更新",
       "message": "初めてのログインのため、パスワード変更を行ってください。",
-      "email_userid": "メールアドレスまたはユーザーID",
+      "email_userid": "ユーザーID",
 
       "step1" : {
         "title": "パスワードの再設定を行う",
-        "txt1": "パスワードの再設定を行います。以下に登録しているメールアドレスまたはユーザーIDを入力してください。"
+        "txt1": "パスワードの再設定を行います。ユーザーIDを入力してください。"
       },
       "step2" : {
         "title": "再設定用のメールを送信しました",
@@ -407,11 +409,15 @@
       "title": "Transactions",
       "type": {
         "redeem": "Payment",
-        "reward": "Bonus"
+        "reward": "Bonus",
+        "reward_rev": "Bonus Reversal",
+        "payment": "QRcd"
       },
       "content": {
         "lunch": "Lunch",
-        "suggestion": "Kudos"
+        "suggestion": "Kudos",
+        "AEMart": "QRcd",
+        "suggestion_rev": "Kudos Reversal"
       },
       "no_data": "No current history"
     },
