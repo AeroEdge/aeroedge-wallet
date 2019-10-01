@@ -106,6 +106,7 @@ export default {
   data () {
     return {
       paymentCoinAmount: localStorage.getItem('refAmount'),
+      paymentCoinmerchID: localStorage.getItem('refMerchID'),
       shortageFlag: false,
       selectOptions: [
         {id: '', label: ''}
@@ -174,7 +175,8 @@ export default {
     payment () {
       this.requestTransaction2({
         type: 'payment',
-        amount: this.paymentCoinAmount
+        amount: this.paymentCoinAmount,
+        merchant: this.paymentCoinmerchID
       })
         .then((res) => {
           this.openModal('issueComplete')
