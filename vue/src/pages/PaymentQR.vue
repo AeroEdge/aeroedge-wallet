@@ -68,6 +68,7 @@ export default {
       let amaountID = contentArr[1].split('=')
       let fixedAmaountID = amaountID[1].replace(' ', '')
       localStorage.setItem('refAmount', fixedAmaountID)
+      localStorage.setItem('refMerchID', fixedMerchID)
       location.href = location.href.slice(0, -2) + 'Mart'
       this.requestShopDetails(fixedMerchID)
         .then(() => {
