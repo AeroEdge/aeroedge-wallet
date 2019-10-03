@@ -112,14 +112,14 @@
       "type": {
         "redeem": "支払い",
         "reward": "付与",
-        "reward_rev": "付与訂正",
-        "payment": "QRコード"
+        "reward_rev": "付与取消",
+        "payment": "支払い"
       },
       "content": {
-        "lunch": "昼食代に充当",
-        "AEMart": "QRコード充当",
+        "lunch": "ランチ",
+        "AEMart": "QRコード",
         "suggestion": "イイね！",
-        "suggestion_rev": "イイね！訂正"
+        "suggestion_rev": "イイね！取消"
       },
       "no_data": "現在の取引履歴はありません"
     },
