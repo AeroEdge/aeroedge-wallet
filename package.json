@@ -21,7 +21,7 @@
   "dependencies": {
     "@pencilpix/vue2-clock-picker": "^0.1.6",
     "axios": "^0.17.1",
-    "moment": "^2.20.1",
+    "moment": "^2.29.4",
     "vee-validate": "^2.0.3",
     "vue": "^2.5.13",
     "vue-date-pick": "^1.0.7",
